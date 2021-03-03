@@ -1,0 +1,7 @@
+@import "../../../styles/index.scss";
+
+.button-wrapper{
+  @include borders;
+  width:30px;
+  height: 30px;
+}
