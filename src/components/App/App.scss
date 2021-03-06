@@ -6,8 +6,6 @@
   padding: 16px;
 }
 
-@import "../../styles//index.scss";
-
 .header {
   @include borders(#7b7b7b, white);
   background: #c0c0c0;
@@ -27,6 +25,7 @@
 
 .face {
   @include borders(white, #999);
+  @include buttons;
   font-size: 35px;
   width: 52px;
   height: 54px;

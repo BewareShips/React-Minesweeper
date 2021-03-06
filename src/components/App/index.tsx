@@ -6,9 +6,9 @@ import Button from "./Button";
 
 const App: React.FC = () => {
   const [cells,setCells] = useState(generateCells());
-
+  console.log(cells)
   const renderCells = (): React.ReactNode => {
-    return cells.map((row,rowIdx)=>row.map((cell,cellIdx)=> <Button key={`${rowIdx}__${cellIdx}`} />))
+    return cells.map((row,rowIdx)=>row.map((cell,cellIdx)=> <Button key={`${rowIdx}__${cellIdx}`} state={cell.state} value={cell.value} rowIndex={rowIdx} colIndex={cellIdx} />))
   }
   
   return (
