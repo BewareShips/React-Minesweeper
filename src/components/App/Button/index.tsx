@@ -7,11 +7,15 @@ interface ButtonProps {
   colIndex: number;
   state: CellState;
   value: CellValue;
+  onClick(rowIndex: number, colIndex: number):(...args: any[]) => void;
+  onContext(rowIndex: number, colIndex: number):(...args: any[]) => void;
 }
 
 const Button: React.FC<ButtonProps> = ({
   rowIndex,
   colIndex,
+  onClick,
+  onContext,
   state,
   value,
 }) => {
@@ -41,6 +45,8 @@ const Button: React.FC<ButtonProps> = ({
       className={`button-wrapper ${
         state === CellState.visible ? "visible" : ""
       } value-${value}`}
+      onClick={onClick(rowIndex,colIndex)}
+      onContextMenu={onContext(rowIndex,colIndex)}
     >
       {renderContent()}
     </div>
