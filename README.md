@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # React Minesweeper 💣 
 
 React Minesweeper made using React, Typescript, and SASS!
