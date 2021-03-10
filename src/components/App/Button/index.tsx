@@ -1,5 +1,5 @@
 import React from "react";
-import { CellState, CellValue } from "../../../types";
+import {  CellState, CellValue } from "../../../types";
 import "./button.scss";
 
 interface ButtonProps {
@@ -7,6 +7,7 @@ interface ButtonProps {
   colIndex: number;
   state: CellState;
   value: CellValue;
+  red?: boolean
   onClick(rowIndex: number, colIndex: number):(...args: any[]) => void;
   onContext(rowIndex: number, colIndex: number):(...args: any[]) => void;
 }
@@ -14,6 +15,7 @@ interface ButtonProps {
 const Button: React.FC<ButtonProps> = ({
   rowIndex,
   colIndex,
+  red,
   onClick,
   onContext,
   state,
@@ -44,7 +46,7 @@ const Button: React.FC<ButtonProps> = ({
     <div
       className={`button-wrapper ${
         state === CellState.visible ? "visible" : ""
-      } value-${value}`}
+      } value-${value} ${red ? 'red': null}`}
       onClick={onClick(rowIndex,colIndex)}
       onContextMenu={onContext(rowIndex,colIndex)}
     >
